@@ -2,19 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MeetingItemComponentComponent } from './meeting-item-component/meeting-item-component.component';
-import { MeetingListComponentComponent } from './meeting-list-component/meeting-list-component.component';
+import { MeetingModule } from './meeting/meeting.module';
+import { AppRoutesModule } from './app-routes.module';
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
-    AppComponent,
-    MeetingItemComponentComponent,
-    MeetingListComponentComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutesModule,
+    MeetingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
 export class AppModule { }
