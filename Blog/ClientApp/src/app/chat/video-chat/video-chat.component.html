@@ -1,4 +1,11 @@
-<video id="streamvideo" autoplay></video>
-
-<br>
-<button class="btn btn-primary">Начать трансляцию</button>
+<div class="card">
+  <div class="card-header">
+    <span class="badge badge-default" *ngIf="!broadcastOn">Пауза</span>
+    <span class="badge badge-success" *ngIf="broadcastOn">Трансляция</span>
+  </div>
+  <div class="card-body">
+    <video #videoElem id="streamvideo" autoplay muted="true" *ngIf="cameraOn"></video>
+  </div>
+  <button class="btn btn-primary btn-sm" (click)="broadcast()" *ngIf="!broadcastOn">Начать трансляцию</button>
+  <button class="btn btn-primary" (click)="stopBroadcast()" *ngIf="broadcastOn">Остановить трансляцию</button>
+</div>
